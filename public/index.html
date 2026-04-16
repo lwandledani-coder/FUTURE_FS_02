@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DumaTech Mini CRM | Lead Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="background"></div>
+
+<!-- Main container: includes header, welcome content, and login/register -->
+<div class="container" id="mainContainer">
+    <header class="header" id="mainHeader">
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Pricing</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </header>
+
+    <div class="content" id="welcomeContent">
+        <h2 class="logo"><i class="fa-solid fa-fire"></i> <span><strong>DumaTech CRM</strong></span></h2>
+        <p>This is a simple Mini CRM | Lead Management System with a login and registration form.</p>
+        <div class="text-sci">
+            <h2>Welcome!!!!<br><span>To Our Mini CRM</span></h2> 
+            <p>It is pleasure to welcome our users, come in.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="logreg-box" id="logregBox">
+        <!-- Login Form -->
+        <div class="form-box login">
+            <form id="loginForm">
+                <h2>Sign In</h2>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" id="loginEmail" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" id="loginPassword" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Sign In</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Sign up</a></p>
+                </div>
+                <div id="loginError" style="color:#ff6b6b; margin-top:10px; text-align:center;"></div>
+            </form>
+        </div>
+
+        <!-- Register Form -->
+        <div class="form-box register">
+            <form id="registerForm">
+                <h2>Sign Up</h2>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" id="regName" required>
+                    <label>Name</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" id="regEmail" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" id="regPassword" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> I agree to the terms</label>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Sign in</a></p>
+                </div>
+                <div id="regError" style="color:#ff6b6b; margin-top:10px; text-align:center;"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Dashboard section (hidden until login) -->
+<div id="dashboard-section" style="display:none;">
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h2><i class="fa-solid fa-chart-line"></i> Leads Dashboard</h2>
+            <div>
+                <button id="theme-toggle" class="theme-btn"><i class="fa-solid fa-moon"></i> Dark</button>
+                <button id="logout-btn" class="logout-btn"><i class="fa-solid fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </div>
+        <div class="add-lead-form">
+            <h3>➕ Add New Lead</h3>
+            <input type="text" id="lead-name" placeholder="Full Name *" required>
+            <input type="email" id="lead-email" placeholder="Email *" required>
+            <select id="lead-source">
+                <option value="website">Website</option>
+                <option value="referral">Referral</option>
+                <option value="social">Social Media</option>
+                <option value="ad">Advertisement</option>
+                <option value="other">Other</option>
+            </select>
+            <select id="lead-priority">
+                <option value="low">Low Priority</option>
+                <option value="medium" selected>Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+            <input type="text" id="lead-tags" placeholder="Tags (comma separated, e.g. hot, budget)">
+            <input type="date" id="lead-followup" placeholder="Follow-up date">
+            <button id="add-lead-btn" class="btn">Add Lead</button>
+        </div>
+        <table id="leads-table">
+            <thead>
+                <tr>
+                    <th>Name</th><th>Email</th><th>Source</th><th>Priority</th><th>Tags</th>
+                    <th>Follow-up</th><th>Status</th><th>Notes</th><th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+<footer class="main-footer">
+    <p>&copy; 2026 DumaTech CRM. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
