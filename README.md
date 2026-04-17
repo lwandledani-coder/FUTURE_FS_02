@@ -17,13 +17,11 @@ A full‑stack CRM built with Node.js, Express, MongoDB, and vanilla HTML/CSS/JS
 - Authentication: express‑session
 
 ## Setup Instructions
+
 1. Clone the repository
 2. Run `npm install`
-3. Create a `.env` file with:
+3. Create a `.env` file in the root folder with the following content:
 
-4. MONGO_URI=mongodb+srv://wildvandeboar_db_user:SAKySF7o1b7kC6vG@cluster0.qbpjqom.mongodb.net/crmdb?appName=Cluster0
-5. SESSION_SECRET=a-very-secret-key-ibutho-lika-Malombo
-
-6. Run `node server.js`
-7. Visit `http://localhost:3000`
-8. Login with `admin@crm.com` / `admin123`
+```env
+MONGO_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/crmdb?appName=Cluster0
+SESSION_SECRET=your-random-secret-key-here
