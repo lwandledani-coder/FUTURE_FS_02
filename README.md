@@ -21,6 +21,13 @@ A full‑stack CRM built with Node.js, Express, MongoDB, and vanilla HTML/CSS/JS
 1. Clone the repository
 2. Run `npm install`
 3. Create a `.env` file in the root folder with the following content:
+4. Replace YOUR_USERNAME, YOUR_PASSWORD, and the cluster address with your actual MongoDB Atlas credentials.
+
+5. Run node server.js
+
+6. Visit http://localhost:3000
+
+7. Login with admin@crm.com / admin123
 
 ```env
 MONGO_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/crmdb?appName=Cluster0
