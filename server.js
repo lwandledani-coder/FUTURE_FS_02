@@ -5,16 +5,18 @@ require('dotenv').config();
 
 const app = express();
 app.use(express.json());
+app.set('trust proxy', 1);
 app.use(express.static('public'));
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: true,
-  cookie: { 
+  saveUninitialized: false,
+  cookie: {
     secure: process.env.NODE_ENV === 'production',
     httpOnly: true,
-    sameSite: 'lax'
+    sameSite: 'lax',
+    maxAge: 24 * 60 * 60 * 1000 
   }
 }));
 
